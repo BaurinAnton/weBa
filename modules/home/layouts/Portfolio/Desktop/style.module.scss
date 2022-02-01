@@ -1,0 +1,151 @@
+@font-face {
+    font-family: "Kharkiv";
+    src: url("/fonts/Kharkiv_Tone.ttf");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+.portfolio {
+    font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        max-width: 95%;
+        margin: 0 auto;
+        position: relative;
+        .column:nth-of-type(1) {
+            .text {
+                span {
+                    font-size: 1.25em;
+                    color: #23232399;
+                }
+            }
+        }
+        .column:nth-of-type(2) {
+            .items:nth-of-type(1) {
+                margin-bottom: 1.875em;
+                .work {
+                    border-bottom: 0.0925em solid #2d2b2b33;
+                    padding: 1.25em 0;
+                    width: 46.25em;
+                    .prevWork {
+                        position: absolute;
+                        top: 2.5625em;
+                        left: -50em;
+                        img {
+                            width: 30em;
+                            height: 100%;
+                        }
+                    }
+                    &:nth-of-type(1):hover {
+                        border-bottom: 0.0925em solid #2D2B2B;
+                        .prevWork {
+                            transition-duration: 100ms;
+                            left: 0em;
+                        }
+                        .workName {
+                            .link {
+                                display: flex;
+                            }
+                        }
+                    }
+                    &:nth-of-type(2):hover {
+                        border-bottom: 0.0925em solid #2D2B2B;
+                        .prevWork {
+                            transition-duration: 100ms;
+                            left: 0em;
+                        }
+                        .workName {
+                            .link {
+                                display: flex;
+                            }
+                        }
+                    }
+                    &:nth-of-type(3):hover {
+                        border-bottom: 0.0925em solid #2D2B2B;
+                        .prevWork {
+                            transition-duration: 100ms;
+                            left: 0em;
+                        }
+                        .workName {
+                            .link {
+                                display: flex;
+                            }
+                        }
+                    }
+                    &:nth-of-type(4):hover {
+                        border-bottom: 0.0925em solid #2D2B2B;
+                        .prevWork {
+                            transition-duration: 100ms;
+                            left: 0em;
+                        }
+                        .workName {
+                            .link {
+                                display: flex;
+                            }
+                        }
+                    }
+                    &:nth-of-type(5):hover {
+                        border-bottom: 0.0925em solid #2D2B2B;
+                        .prevWork {
+                            transition-duration: 100ms;
+                            left: 0em;
+                        }
+                        .workName {
+                            .link {
+                                display: flex;
+                            }
+                        }
+                    }
+                    &:nth-of-type(1) {
+                        padding-top: 0;
+                    }
+                    .workName {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        span {
+                            font-size: 2.5em;
+                            font-family: "Kharkiv";
+                        }
+                        .link {
+                            display: none;
+                            a {
+                                text-decoration: none;
+                                span {
+                                    font-size: 1.25em;
+                                    font-family: "NAMU";
+                                    color: #232323;
+                                }
+                                img {
+                                    margin-left: 0.625em;
+                                    width: 1.0625em;
+                                    height: 0.8em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .items:nth-of-type(2) {
+                border: 0.0625em solid #23232333;
+                display: inline-block;
+                border-radius: 6.25em;
+                padding: 0.5em 1.25em 0.6875em 1.25em;
+                &:hover {
+                    background-color: #232323;
+                    transition-duration: 100ms;
+                    span {
+                        color: white;
+                    }
+                }
+                span {
+                    font-size: 1.375em;
+                    color: #232323;
+                }
+            }
+        }
+    }
+}
