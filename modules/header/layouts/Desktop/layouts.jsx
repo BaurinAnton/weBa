@@ -18,6 +18,10 @@ export const Desktop = ({ handlerButton }) => {
         handlerButton()
         setIsActiveMenu(!isActiveMenu)
     }
+    const onMenu = () => {
+        !isActiveMenu ? document.body.style.overflow = "hidden" : document.body.style = ""
+        setIsActiveMenu(!isActiveMenu)
+    }
     return (
         <>
             <header className={style.header}>
@@ -31,11 +35,11 @@ export const Desktop = ({ handlerButton }) => {
                         </ul>
                     </div>
                     <div className={style.column}
-                        onClick={() => setIsActiveMenu(!isActiveMenu)}>
+                        onClick={onMenu}>
                         <span>{HEADER.menu}</span>
                     </div>
                 </div>
-                <div className={isActiveMenu ? style.onWrapperMenu : style.offWrapperMenu} onClick={() => setIsActiveMenu(!isActiveMenu)}>
+                <div className={isActiveMenu ? style.onWrapperMenu : style.offWrapperMenu} onClick={onMenu}>
                 </div>
                 <div className={isActiveMenu ? style.onMenu : style.offMenu}>
                     <div className={style.row}>
@@ -44,7 +48,7 @@ export const Desktop = ({ handlerButton }) => {
                                 {MenuConstants}
                             </ul>
                         </div>
-                        <div className={style.column} onClick={() => setIsActiveMenu(!isActiveMenu)}>
+                        <div className={style.column} onClick={onMenu}>
                             <span></span>
                             <span></span>
                         </div>

@@ -1,0 +1,55 @@
+.portfolio {
+    font-size: calc(16px + (10 + 10 * 0.2) * ((100vw - 480px) / 768));
+    .wrapper {
+        max-width: 95%;
+        margin: 0 auto;
+        .row:nth-of-type(1) {
+            margin-bottom: 1.875em;
+            h3 {
+                font-size: 1.0625em;
+                color: #23232399;
+                font-family: "NAMU";
+            }
+        }
+        .row:nth-of-type(2) {
+            .work {
+                border-bottom: 0.0625em solid #2d2b2b33;
+                &:nth-of-type(1) {
+                    a {
+                        padding-top: 0;
+                    }
+                }
+                a {
+                    text-decoration: none;
+                    padding: 1.25em 0;
+                    display: block;
+                    span {
+                        color: #232323;
+                        font-size: 1.875em;
+                        font-family: "Kharkiv";
+                    }
+                }
+            }
+        }
+        .row:nth-of-type(3) {
+            margin-top: 1.875em;
+            .column {
+                border: 0.0625em solid #23232333;
+                display: inline-block;
+                border-radius: 6.25em;
+                padding: 0.5625em 1.25em 0.632em 1.25em;
+                transition-duration: 100ms;
+                &:hover {
+                    background-color: #232323;
+                    span {
+                        color: white;
+                    }
+                }
+                span {
+                    color: #232323;
+                    font-size: 1.25em;
+                }
+            }
+        }
+    }
+}

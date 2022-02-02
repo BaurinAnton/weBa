@@ -16,7 +16,12 @@ import { Form } from '/modules/form'
 
 export default function Home() {
   const [isFormFilling, setIsFormFilling] = useState(false);
-  const handlerButton = () => (setIsFormFilling(!isFormFilling))
+  const handlerButton = () => {
+    !isFormFilling ? document.body.style.overflow = "hidden" : document.body.style = ''
+    return (
+      setIsFormFilling(!isFormFilling)
+    )
+  }
   return (
     <>
       <Header handlerButton={handlerButton} />

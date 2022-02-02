@@ -1,5 +1,3 @@
-import { Wave } from 'react-animated-text';
-
 import style from './style.module.scss'
 import { MAIN_SECTION } from './constants'
 
