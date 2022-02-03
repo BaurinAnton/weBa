@@ -1,9 +1,19 @@
+import { motion } from 'framer-motion';
+
 import style from './style.module.scss'
 import { MAIN_SECTION } from './constants'
 
 export const Tablet = ({ handlerButton }) => {
     return (
-        <section className={style.mainSection}>
+        <motion.section className={style.mainSection}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0 }}
+            variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 }
+            }}>
             <div className={style.wrapper}>
                 <div className={style.row}>
                     <div className={style.column}>
@@ -19,12 +29,22 @@ export const Tablet = ({ handlerButton }) => {
                     </div>
                 </div>
                 <div className={style.row}>
+                    <motion.div className={style.arrowWrapper} 
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 3 }}
+                        variants={{
+                            visible: { width: '7.25em' },
+                            hidden: { width: 0 }
+                        }}>
+                    </motion.div>
                     <div className={style.column} onClick={handlerButton}>
                         <span>{MAIN_SECTION.circleText}</span>
                     </div>
-                    <img src="/img/home/MainSection/arrow.svg" alt="arrow" />
+                    {/* <img src="/img/home/MainSection/arrow.svg" alt="arrow" /> */}
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }

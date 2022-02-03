@@ -1,15 +1,3 @@
-@keyframes shadow {
-    0% {
-        transform: rotate(-2deg);
-    }
-    50% {
-        transform: rotate(2deg);
-    }
-    100% {
-        transform: rotate(-2deg);
-    }
-}
-
 .MainSection {
     font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
     .wrapper {
@@ -41,7 +29,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                animation: shadow  2s infinite ease-in-out;
+                cursor: pointer;
                 &:hover {
                     transition-duration: 200ms;
                     background-color: #232323;
@@ -55,12 +43,13 @@
                     color: #232323;
                 }
             }
-            img {
+            .arrowImg {
+                background-image: url(/img/home/MainSection/arrow.svg);
+                height: 1.579em;
+                background-size: cover;
                 position: absolute;
                 top: 13em;
-                right: 17.5em;
-                width: 7.125em;
-                height: 1.5em;
+                left: 55em;
             }
         }
         .row:nth-of-type(2) {

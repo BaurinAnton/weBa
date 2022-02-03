@@ -26,6 +26,13 @@
                 span {
                     font-size: 1.375em;
                 }
+                &:hover {
+                    transition-duration: 200ms;
+                    background-color: #232323;
+                    span {
+                        color: white;
+                    }
+                }
             }
         }
     }

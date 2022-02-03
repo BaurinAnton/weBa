@@ -1,9 +1,19 @@
+import { motion } from 'framer-motion';
+
 import { WORK } from './constants'
 import style from './style.module.scss'
 
 export const Tablet = ({ handlerButton }) => {
     const workPortfolio = WORK.workTest.map((list) => (
-        <div className={style.column}>
+        <motion.div className={style.column}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={{
+                visible: { opacity: 1, translateY: '0px' },
+                hidden: { opacity: 0, translateY: '50px' }
+            }}>
             <div className={style.items}>
                 <h3>{list.tiile}</h3>
             </div>
@@ -17,18 +27,34 @@ export const Tablet = ({ handlerButton }) => {
                     <span>{list.price[0].textThree}</span>
                 </div>
             </div>
-        </div>
+        </motion.div>
     ))
     return (
         <section className={style.work}>
             <div className={style.wrapper}>
-                <div className={style.row}>
+                <motion.div className={style.row}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    variants={{
+                        visible: { opacity: 1, translateY: '0px' },
+                        hidden: { opacity: 0, translateY: '50px' }
+                    }}>
                     <h2>{WORK.h2}</h2>
-                </div>
+                </motion.div>
                 <div className={style.row}>
                     {workPortfolio}
                 </div>
-                <div className={style.row}>
+                <motion.div className={style.row}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    variants={{
+                        visible: { opacity: 1, translateY: '0px' },
+                        hidden: { opacity: 0, translateY: '50px' }
+                    }}>
                     <div className={style.column} onClick={handlerButton}>
                         <span>{WORK.discutions[0].cicrleText}</span>
                     </div>
@@ -36,7 +62,7 @@ export const Tablet = ({ handlerButton }) => {
                         <span>{WORK.discutions[0].descriptionOne}</span>
                         <span>{WORK.discutions[0].descriptionTo}</span>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     )

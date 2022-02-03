@@ -1,9 +1,19 @@
+import { motion } from 'framer-motion';
+
 import { MAIN_SECTION } from './constants'
 import style from './style.module.scss'
 
 export const SmallMobile = ({ handlerButton }) => {
     return (
-        <section className={style.mainSection}>
+        <motion.section className={style.mainSection}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0 }}
+            variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 }
+            }}>
             <div className={style.wrapper}>
                 <div className={style.row}>
                     <h1>
@@ -23,6 +33,6 @@ export const SmallMobile = ({ handlerButton }) => {
                     <span>{MAIN_SECTION.content}</span>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }

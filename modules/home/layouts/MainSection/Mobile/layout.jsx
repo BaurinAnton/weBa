@@ -1,9 +1,20 @@
+import { motion } from 'framer-motion';
+
 import { MAIN_SECTION } from './constants'
 import style from './style.module.scss'
 
 export const Mobile = ({ handlerButton }) => {
     return (
-        <section className={style.mainSection}>
+        <motion.section
+            className={style.mainSection}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0 }}
+            variants={{
+                visible: { opacity: 1 },
+                hidden: { opacity: 0 }
+            }}>
             <div className={style.wrapper}>
                 <div className={style.row}>
                     <h1>
@@ -13,8 +24,8 @@ export const Mobile = ({ handlerButton }) => {
                         <span>{MAIN_SECTION.h1[3].content}</span>
                     </h1>
                 </div>
-                <div className={style.row} onClick={handlerButton}>
-                    <div className={style.items}>
+                <div className={style.row}>
+                    <div className={style.items} onClick={handlerButton}>
                         <span>{MAIN_SECTION.circleText}</span>
                     </div>
                     <img src="img/home/MainSection/arrowMobile.svg" alt="" />
@@ -23,6 +34,6 @@ export const Mobile = ({ handlerButton }) => {
                     <span>{MAIN_SECTION.content}</span>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }

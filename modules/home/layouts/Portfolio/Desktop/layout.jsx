@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 import Link from 'next/link'
 import { PORTFOLIO } from './constants'
 import style from './style.module.scss'
@@ -24,19 +26,37 @@ export const Desktop = () => {
     return (
         <section className={style.portfolio}>
             <div className={style.wrapper}>
-                <div className={style.column}>
+                <motion.div
+                    className={style.column}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0 }}
+                    variants={{
+                        visible: { opacity: 1, translateY: '0' },
+                        hidden: { opacity: 0, translateY: '50px' }
+                    }}>
                     <div className={style.text}>
                         <span>{PORTFOLIO.text}</span>
                     </div>
-                </div>
-                <div className={style.column}>
+                </motion.div>
+                <motion.div
+                    className={style.column}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    variants={{
+                        visible: { opacity: 1, marginTop: 0 },
+                        hidden: { opacity: 0, marginTop: '3.125em' }
+                    }}>
                     <div className={style.items}>
                         {workPortfolio}
                     </div>
                     <div className={style.items}>
                         <span>{PORTFOLIO.button}</span>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </section>
     )

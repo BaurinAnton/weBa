@@ -1,9 +1,19 @@
+import { motion } from 'framer-motion';
+
 import { STAGES } from './constants'
 import style from './style.module.scss'
 
 export const Tablet = () => {
     const stagesDev = STAGES.stages.map((list) => (
-        <div className={style.column} key={list.id}>
+        <motion.div className={style.column} key={list.id}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={{
+                visible: { opacity: 1, translateY: '0px' },
+                hidden: { opacity: 0, translateY: '50px' }
+            }}>
             <div className={style.items}>
                 <span>{list.title}</span>
             </div>
@@ -15,17 +25,35 @@ export const Tablet = () => {
                     <span>{list.symbol}</span>
                 </div>
             </div>
-        </div>
+        </motion.div>
     ))
     return (
         <section className={style.stages}>
             <div className={style.wrapper}>
-                <div className={style.row}>
+                <motion.div className={style.row}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0 }}
+                    variants={{
+                        visible: { opacity: 1, translateY: '0px' },
+                        hidden: { opacity: 0, translateY: '50px' }
+                    }}>
                     <h2>{STAGES.h2}</h2>
-                </div>
+                </motion.div>
                 <div className={style.row}>
                     {stagesDev}
-                    <img src="img/home/Stages/optional.svg" alt="optional" className={style.optional} />
+                    <motion.img
+                        src="img/home/Stages/optional.svg"
+                        alt="optional" className={style.optional}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        variants={{
+                            visible: { opacity: 1, translateY: '0px' },
+                            hidden: { opacity: 0, translateY: '50px' }
+                        }} />
                 </div>
             </div>
         </section>

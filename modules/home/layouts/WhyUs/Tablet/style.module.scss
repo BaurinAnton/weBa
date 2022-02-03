@@ -85,12 +85,13 @@
                 }
             }
             .column:nth-of-type(8) {
+                height: 100%;
                 display: flex;
-                justify-content: center;
                 align-items: center;
-                img {
-                    width: 18.875em;
-                    height: 3em;
+                .arrowImg {
+                    background-image: url(/img/home/WhyUs/arrowTablet.svg);
+                    background-size: cover;
+                    height: 2.8em;
                     margin-bottom: -3em;
                 }
             }

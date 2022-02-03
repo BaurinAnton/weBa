@@ -1,34 +1,75 @@
+import { motion } from 'framer-motion';
+
 import { WHY_US } from './constants'
 import style from './style.module.scss'
 
 export const Desktop = ({ handlerButton }) => {
     const workPortfolio = WHY_US.column.map((list) => (
-        <div className={style.column} id={list.id}>
+        <motion.div
+            className={style.column}
+            id={list.id}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            variants={{
+                visible: { opacity: 1, translateY: '0px' },
+                hidden: { opacity: 0, translateY: '50px' }
+            }}>
             <div className={style.items}>
                 <h2>{list.title}</h2>
             </div>
             <div className={style.items}>
                 <span>{list.description}</span>
             </div>
-        </div>
+        </motion.div>
     ))
     return (
-        <section className={style.whyUs}>
+        <section className={style.whyUs} >
             <div className={style.wrapper}>
-                <div className={style.row}>
+                <motion.div
+                    className={style.row}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0 }}
+                    variants={{
+                        visible: { opacity: 1, translateY: '0px' },
+                        hidden: { opacity: 0, translateY: '50px' }
+                    }}>
                     <h2>{WHY_US.h2}</h2>
-                </div>
+                </motion.div>
                 <div className={style.row}>
-                    <div className={style.column}>
+                    <motion.div
+                        className={style.column}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        variants={{
+                            visible: { opacity: 1, translateY: '0px' },
+                            hidden: { opacity: 0, translateY: '50px' }
+                        }}>
                         <span>{WHY_US.columnFirst}</span>
-                    </div>
+                    </motion.div>
                     {workPortfolio}
-                    <div className={style.column} onClick={handlerButton}>
+                    <motion.div
+                        className={style.column}
+                        onClick={handlerButton}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        variants={{
+                            visible: { opacity: 1, translateY: '0px' },
+                            hidden: { opacity: 0, translateY: '50px' }
+                        }}>
                         <span>{WHY_US.columnLast}</span>
-                    </div>
+                        <img className={style.arrow} src="img/home/WhyUs/arrow.svg" alt="arrow"/>
+                    </motion.div>
+                    
                 </div>
-                <img src="img/home/WhyUs/arrow.svg" alt="arrow" className={style.arrow} />
             </div>
-        </section>
+        </section >
     )
 }

@@ -9,6 +9,7 @@
         align-items: center;
         border-bottom: 0.0625em solid #23232333;
         padding-bottom: 5.75em;
+        position: relative;
         .row:nth-of-type(1) {
             .column:nth-of-type(1) {
                 h1 {
@@ -32,7 +33,14 @@
             }
         }
         .row:nth-of-type(2) {
-            position: relative;
+            .arrowWrapper {
+                background-image: url(/img/home/MainSection/arrow.svg);
+                height: 1.6em;
+                background-size: cover;
+                position: absolute;
+                top: 10em;
+                left: 35em;
+            }
             .column {
                 width: 17.125em;
                 height: 17.125em;
