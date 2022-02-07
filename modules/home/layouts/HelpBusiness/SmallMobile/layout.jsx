@@ -5,7 +5,7 @@ import style from './style.module.scss'
 
 export const SmallMobile = () => {
     return (
-        <section className={style.helpBusiness}>
+        <section className={style.helpBusiness} id="helpBusiness">
             <div className={style.wrapper}>
                 <motion.div className={style.row}
                     initial="hidden"

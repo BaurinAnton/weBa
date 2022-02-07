@@ -3,6 +3,7 @@
     .wrapper {
         max-width: 95%;
         margin: 0 auto;
+        padding-top: 7.5em;
         .row:nth-of-type(1) {
             margin-bottom: 3.75em;
             h3 {
@@ -36,7 +37,7 @@
                     }
                     &:hover {
                         img {
-                            height: 30em;
+                            height: 30.5em;
                             transition-duration: 300ms;
                         }
                     }
@@ -45,7 +46,6 @@
         }
         .row:nth-of-type(3) {
             margin-top: 1.875em;
-            margin-bottom: 7.5em;
             .column {
                 padding: 0.5em 1.25em 0.6875em 1.25em;
                 border: 0.0625em solid #23232333;

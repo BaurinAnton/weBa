@@ -12,6 +12,7 @@
         max-width: 95%;
         margin: 0 auto;
         border-bottom: 0.0625em solid #23232333;
+        padding: 1.25em 0;
         .column:nth-of-type(1) {
             img {
                 width: 4.625em;
@@ -19,7 +20,6 @@
             }
         }
         .column:nth-of-type(2) {
-            padding: 1.5em 0;
             .items {
                 border: 0.0625em solid #23232333;
                 border-radius: 6.25em;

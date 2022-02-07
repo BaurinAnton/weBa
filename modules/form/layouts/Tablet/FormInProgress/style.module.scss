@@ -122,14 +122,15 @@
                 font-size: 0.75em;
                 line-height: 1.2em;
                 color: #23232399;
-                &:nth-of-type(2) {
-                    border-bottom: 0.0625em solid #E41F1F;
-                    cursor: pointer;
-                    &:hover {
-                        border-bottom: 0.125em solid #232323;
-                        color: #232323; 
-                        transition-duration: 100ms;
-                    }
+            }
+            a {
+                border-bottom: 0.0625em solid #e41f1f;
+                cursor: pointer;
+                text-decoration: none;
+                &:hover {
+                    border-bottom: 0.125em solid #232323;
+                    color: #232323;
+                    transition-duration: 100ms;
                 }
             }
         }

@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 import style from './style.module.scss'
 import { MAIN_SECTION } from './constants'
 
-export const Tablet = ({ handlerButton }) => {
+export const Tablet = ({ handlerButton, handlerMenu }) => {
+    const deleteArrow = () => (
+        handlerButton(),
+        handlerMenu()
+    )
     return (
         <motion.section className={style.mainSection}
+            id="mainSection"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -23,13 +28,13 @@ export const Tablet = ({ handlerButton }) => {
                             <span>{MAIN_SECTION.h1[2].content}</span>
                         </h1>
                     </div>
-                    <div className={style.column} onClick={handlerButton}>
+                    <div className={style.column} onClick={handlerButton, deleteArrow}>
                         <span>{MAIN_SECTION.h2[0].content}</span>
                         <span>{MAIN_SECTION.h2[1].content}</span>
                     </div>
                 </div>
                 <div className={style.row}>
-                    <motion.div className={style.arrowWrapper} 
+                    <motion.div className={style.arrowWrapper}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
@@ -42,7 +47,6 @@ export const Tablet = ({ handlerButton }) => {
                     <div className={style.column} onClick={handlerButton}>
                         <span>{MAIN_SECTION.circleText}</span>
                     </div>
-                    {/* <img src="/img/home/MainSection/arrow.svg" alt="arrow" /> */}
                 </div>
             </div>
         </motion.section>

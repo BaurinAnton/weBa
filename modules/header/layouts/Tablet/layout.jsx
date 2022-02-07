@@ -1,15 +1,26 @@
+import Link from 'next/link';
 import { useState } from 'react';
 
 import { HEADER } from './constants'
 import style from './style.module.scss'
 
-export const Tablet = ({ handlerButton }) => {
+export const Tablet = ({ handlerButton, handlerMenu }) => {
     const [isActiveMenu, setIsActiveMenu] = useState(false);
     const MenuConstants = HEADER.listMenu.map((list) => (
         <li key={list.id}>
-            <a href="/" className={style.navLink} onClick={() => (setIsActiveMenu(!isActiveMenu))}>{list.content}</a>
+            <Link href={list.href}>
+                <a
+                    className={style.navLink}
+                    onClick={
+                        () => (setIsActiveMenu(!isActiveMenu),
+                            isActiveMenu ? document.body.style = ""
+                                : document.body.style.overflow = "hidden", handlerMenu()
+                        )}>{list.content}
+                </a>
+            </Link>
         </li>
     ))
+
     const offMenuIsForm = () => {
         handlerButton()
         setIsActiveMenu(!isActiveMenu)
@@ -17,12 +28,17 @@ export const Tablet = ({ handlerButton }) => {
     const onMenu = () => {
         !isActiveMenu ? document.body.style.overflow = "hidden" : document.body.style = ""
         setIsActiveMenu(!isActiveMenu)
+        handlerMenu()
     }
     return (
         <header className={style.header}>
             <div className={style.wrapper}>
                 <div className={style.column}>
-                    <img src="img/header/logoTablet.svg" alt="arrow" />
+                    <Link href="/">
+                        <a>
+                            <img src="img/header/logoTablet.svg" alt="logo" />
+                        </a>
+                    </Link>
                 </div>
                 <div className={style.column} onClick={onMenu}>
                     <div className={style.items}>
@@ -48,7 +64,7 @@ export const Tablet = ({ handlerButton }) => {
                     <div className={style.discussProject} onClick={offMenuIsForm}>
                         <span>{HEADER.discussProject}</span>
                     </div>
-                    <img src="img/header/arrow.svg" alt="" />
+                    <img src="img/header/arrow.svg" alt="arrow" />
                 </div>
             </div>
         </header>

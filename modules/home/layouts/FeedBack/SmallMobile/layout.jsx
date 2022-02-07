@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 import { FEED_BACK } from './constants'
 import style from './style.module.scss'
 
-export const SmallMobile = ({ handlerButton }) => {
+export const SmallMobile = ({ handlerButton, handlerMenu }) => {
+    const deleteArrow = () => (
+        handlerButton(),
+        handlerMenu()
+    )
     return (
         <motion.section className={style.feedBack}
+            id="feedBack"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -19,7 +24,7 @@ export const SmallMobile = ({ handlerButton }) => {
                     <div className={style.column}>
                         <h2>{FEED_BACK.h2}</h2>
                     </div>
-                    <div className={style.column} onClick={handlerButton}>
+                    <div className={style.column} onClick={deleteArrow}>
                         <span>{FEED_BACK.circleText}</span>
                     </div>
                 </div>

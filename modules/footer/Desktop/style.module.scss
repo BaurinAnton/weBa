@@ -97,6 +97,14 @@
             }
         }
         .column:nth-of-type(3) {
+            display: flex;
+            align-items: flex-end;
+            span {
+                margin-bottom: 0.35em;
+                color: #23232399;
+                font-size: 0.875em;
+                margin-left: 0.36em;
+            }
             img {
                 width: 4.625em;
                 height: 1.875em;

@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 import style from './style.module.scss'
 import { MAIN_SECTION } from './constants'
 
-export const Desktop = ({ handlerButton }) => {
+export const Desktop = ({ handlerButton, handlerMenu }) => {
+    const deleteArrow = () => (
+        handlerButton(),
+        handlerMenu()
+    )
     return (
         <motion.section className={style.MainSection}
+            id="mainSection"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -23,7 +28,7 @@ export const Desktop = ({ handlerButton }) => {
                             <span>{MAIN_SECTION.h1[2].content}</span>
                         </h1>
                     </div>
-                    <div className={style.column} onClick={handlerButton}>
+                    <div className={style.column} onClick={deleteArrow}>
                         <div className={style.wrapperCircle}></div>
                         <span>{MAIN_SECTION.circleText}</span>
                     </div>

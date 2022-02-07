@@ -9,7 +9,7 @@ export const SmallMobile = () => {
         <div className={style.work} key={list.id}>
             <div className={style.items}>
                 <span>{list.content}</span>
-                <Link href="#">
+                <Link href={list.href}>
                     <a>
                         <img src={list.source} alt="" />
                     </a>
@@ -18,7 +18,7 @@ export const SmallMobile = () => {
         </div>
     ))
     return (
-        <section className={style.portfolio}>
+        <section className={style.portfolio} id="portfolio">
             <div className={style.wrapper}>
                 <motion.div className={style.row}
                     initial="hidden"
@@ -42,7 +42,7 @@ export const SmallMobile = () => {
                     }}>
                     {workPortfolio}
                 </motion.div>
-                <motion.div className={style.row}
+                {/* <motion.div className={style.row}
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -54,7 +54,7 @@ export const SmallMobile = () => {
                     <div className={style.column}>
                         <span>{PORTFOLIO.button}</span>
                     </div>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     )

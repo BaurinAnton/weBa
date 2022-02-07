@@ -7,11 +7,31 @@
         max-width: 95%;
         margin: 0 auto;
         position: relative;
+        padding-top: 9.375em;
         .column:nth-of-type(1) {
-            .text {
+            .items:nth-of-type(1) {
+                margin-bottom: 8.5625em;
                 span {
                     font-size: 1.25em;
                     color: #23232399;
+                }
+            }
+            .items:nth-of-type(2) {
+                display: flex;
+                align-items: center;
+                .box:nth-of-type(1) {
+                    width: 15.4375em;
+                    margin-right: 0.625em;
+                    span {
+                        color: #23232399;
+                        font-size: 1.25em;
+                        line-height: 1.2em;
+                    }
+                }
+                .box:nth-of-type(2) {
+                    color: #232323;
+                    width: 1.375em;
+                    height: 1em;
                 }
             }
         }
@@ -24,7 +44,7 @@
                     width: 46.25em;
                     .prevWork {
                         position: absolute;
-                        top: 2.5625em;
+                        top: 11.9em;
                         left: -50em;
                         transition-duration: 300ms;
                         img {
@@ -33,7 +53,7 @@
                         }
                     }
                     &:nth-of-type(1):hover {
-                        border-bottom: 0.0925em solid #2D2B2B;
+                        border-bottom: 0.0925em solid #2d2b2b;
                         .prevWork {
                             transition-duration: 300ms;
                             left: 0em;
@@ -41,11 +61,12 @@
                         .workName {
                             .link {
                                 display: flex;
+                                align-items: center;
                             }
                         }
                     }
                     &:nth-of-type(2):hover {
-                        border-bottom: 0.0925em solid #2D2B2B;
+                        border-bottom: 0.0925em solid #2d2b2b;
                         .prevWork {
                             transition-duration: 300ms;
                             left: 0em;
@@ -53,11 +74,12 @@
                         .workName {
                             .link {
                                 display: flex;
+                                align-items: center;
                             }
                         }
                     }
                     &:nth-of-type(3):hover {
-                        border-bottom: 0.0925em solid #2D2B2B;
+                        border-bottom: 0.0925em solid #2d2b2b;
                         .prevWork {
                             transition-duration: 300ms;
                             left: 0em;
@@ -65,11 +87,12 @@
                         .workName {
                             .link {
                                 display: flex;
+                                align-items: center;
                             }
                         }
                     }
                     &:nth-of-type(4):hover {
-                        border-bottom: 0.0925em solid #2D2B2B;
+                        border-bottom: 0.0925em solid #2d2b2b;
                         .prevWork {
                             transition-duration: 300ms;
                             left: 0em;
@@ -77,11 +100,12 @@
                         .workName {
                             .link {
                                 display: flex;
+                                align-items: center;
                             }
                         }
                     }
                     &:nth-of-type(5):hover {
-                        border-bottom: 0.0925em solid #2D2B2B;
+                        border-bottom: 0.0925em solid #2d2b2b;
                         .prevWork {
                             transition-duration: 300ms;
                             left: 0em;
@@ -89,33 +113,37 @@
                         .workName {
                             .link {
                                 display: flex;
+                                align-items: center;
                             }
                         }
                     }
                     &:nth-of-type(1) {
                         padding-top: 0;
                     }
-                    .workName {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        span {
-                            font-size: 2.5em;
-                            font-family: "Kharkiv";
-                        }
-                        .link {
-                            display: none;
-                            a {
+                    a {
+                        text-decoration: none;
+                        .workName {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            span {
+                                font-size: 2.5em;
+                                font-family: "Kharkiv";
+                                color: #232323;
+                            }
+                            .link {
+                                display: none;
                                 text-decoration: none;
-                                span {
+                                .prew {
                                     font-size: 1.25em;
                                     font-family: "NAMU";
                                     color: #232323;
                                 }
-                                img {
+                                .arrow {
                                     margin-left: 0.625em;
                                     width: 1.0625em;
                                     height: 0.8em;
+                                    margin-top: 0.2em;
                                 }
                             }
                         }

@@ -3,10 +3,14 @@ import { motion } from 'framer-motion';
 import style from './style.module.scss'
 import { WHY_US } from './constants'
 
-export const Tablet = ({ handlerButton }) => {
+export const Tablet = ({ handlerButton, handlerMenu }) => {
+    const deleteArrow = () => (
+        handlerButton(),
+        handlerMenu()
+    )
     const workPortfolio = WHY_US.column.map((list) => (
         <motion.div className={style.column}
-            id={list.id}
+            key={list.id}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -24,7 +28,7 @@ export const Tablet = ({ handlerButton }) => {
         </motion.div>
     ))
     return (
-        <section className={style.whyUs}>
+        <section className={style.whyUs} id="whyUs">
             <div className={style.wrapper}>
                 <motion.div className={style.row}
                     className={style.row}
@@ -66,7 +70,7 @@ export const Tablet = ({ handlerButton }) => {
                     </div>
                     <motion.div
                         className={style.column}
-                        onClick={handlerButton}
+                        onClick={deleteArrow}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}

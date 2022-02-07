@@ -3,9 +3,14 @@ import { motion } from 'framer-motion';
 import { WORK } from './constants'
 import style from './style.module.scss'
 
-export const Tablet = ({ handlerButton }) => {
+export const Tablet = ({ handlerButton, handlerMenu }) => {
+    const deleteArrow = () => (
+        handlerButton(),
+        handlerMenu()
+    )
     const workPortfolio = WORK.workTest.map((list) => (
         <motion.div className={style.column}
+            key={list.id}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -30,7 +35,7 @@ export const Tablet = ({ handlerButton }) => {
         </motion.div>
     ))
     return (
-        <section className={style.work}>
+        <section className={style.work} id="work">
             <div className={style.wrapper}>
                 <motion.div className={style.row}
                     initial="hidden"
@@ -55,7 +60,7 @@ export const Tablet = ({ handlerButton }) => {
                         visible: { opacity: 1, translateY: '0px' },
                         hidden: { opacity: 0, translateY: '50px' }
                     }}>
-                    <div className={style.column} onClick={handlerButton}>
+                    <div className={style.column} onClick={deleteArrow}>
                         <span>{WORK.discutions[0].cicrleText}</span>
                     </div>
                     <div className={style.column}>

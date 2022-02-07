@@ -1,8 +1,9 @@
 export const FOOTER = {
-    telegram: 'Телеграм.',
-    instagram: 'Инстаграм.',
-    email: 'Почта.',
+    socialNetwork: [
+        { content: 'Телеграм.', href: 'https://t.me/webastudio' },
+        { content: 'Инстаграм.', href: 'https://www.instagram.com/weba_studio/' },
+        { content: 'Почта.', href: 'mailto:weba-studio@yandex.ru' }
+    ],
     arrow: '↑',
     politics: 'Политика конфиденциальности',
-    
 }

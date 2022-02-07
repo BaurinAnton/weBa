@@ -3,10 +3,15 @@ import { motion } from 'framer-motion';
 import { MAIN_SECTION } from './constants'
 import style from './style.module.scss'
 
-export const Mobile = ({ handlerButton }) => {
+export const Mobile = ({ handlerButton, handlerMenu }) => {
+    const deleteArrow = () => (
+        handlerButton(),
+        handlerMenu()
+    )
     return (
         <motion.section
             className={style.mainSection}
+            id="mainSection"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -25,10 +30,10 @@ export const Mobile = ({ handlerButton }) => {
                     </h1>
                 </div>
                 <div className={style.row}>
-                    <div className={style.items} onClick={handlerButton}>
+                    <div className={style.items} onClick={deleteArrow}>
                         <span>{MAIN_SECTION.circleText}</span>
                     </div>
-                    <img src="img/home/MainSection/arrowMobile.svg" alt="" />
+                    <img src="img/home/MainSection/arrowMobile.svg" alt="arrow" />
                 </div>
                 <div className={style.row}>
                     <span>{MAIN_SECTION.content}</span>

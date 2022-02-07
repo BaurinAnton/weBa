@@ -25,7 +25,7 @@ export const Desktop = () => {
         </motion.div>
     ))
     return (
-        <section className={style.resultWork}>
+        <section className={style.resultWork} id="resultWork">
             <div className={style.wrapper}>
                 <motion.div
                     className={style.row}

@@ -3,8 +3,8 @@
     .wrapper {
         max-width: 95%;
         margin: 0 auto;
+        padding-top: 5.625em;
         .row:nth-of-type(1) {
-            margin-top: 5.625em;
             h3 {
                 font-size: 1.0625em;
                 color: #23232399;
@@ -33,7 +33,7 @@
                     }
                     &:hover {
                         img {
-                            height: 11em;
+                            height: 10.9em;
                             transition-duration: 300ms;
                         }
                     }
@@ -41,7 +41,6 @@
             }
         }
         .row:nth-of-type(3) {
-            margin-bottom: 5.625em;
             .column {
                 border: 0.0625em solid #23232333;
                 display: inline-block;

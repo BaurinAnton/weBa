@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 import { WORK } from './constants'
 import style from './style.module.scss'
 
-export const Desktop = ({ handlerButton }) => {
+export const Desktop = ({ handlerButton, handlerMenu }) => {
+    const deleteArrow = () => (
+        handlerButton(),
+        handlerMenu()
+    )
     const workPortfolio = WORK.workTest.map((list) => (
         <motion.div
             className={style.column}
@@ -32,7 +36,7 @@ export const Desktop = ({ handlerButton }) => {
         </motion.div>
     ))
     return (
-        <section className={style.work}>
+        <section className={style.work} id="work">
             <div className={style.wrapper}>
                 <motion.div
                     className={style.row}
@@ -59,7 +63,7 @@ export const Desktop = ({ handlerButton }) => {
                         visible: { opacity: 1, translateY: '0px' },
                         hidden: { opacity: 0, translateY: '50px' }
                     }}>
-                    <div className={style.column} onClick={handlerButton}>
+                    <div className={style.column} onClick={deleteArrow}>
                         <span>{WORK.discutions[0].cicrleText}</span>
                     </div>
                     <div className={style.column}>

@@ -8,34 +8,37 @@ export const Mobile = () => {
             <div className={style.wrapper}>
                 <div className={style.row}>
                     <div className={style.column}>
-                        <div className={style.items}><Link href="#">
-                            <a className={style.telegram}>
-                                <span>{FOOTER.telegram}</span>
-                            </a>
-                        </Link>
+                        <div className={style.items}>
+                            <Link href={FOOTER.socialNetwork[0].href}>
+                                <a className={style.telegram}>
+                                    <span>{FOOTER.socialNetwork[0].content}</span>
+                                </a>
+                            </Link>
                             <Link href="#">
                                 <a className={style.arrow}>
                                     <span>{FOOTER.arrow}</span>
                                 </a>
                             </Link></div>
-                        <div className={style.items}><Link href="#">
-                            <a className={style.instagram}>
-                                <span>{FOOTER.instagram}</span>
-                            </a>
-                        </Link>
-                            <Link href="#">
+                        <div className={style.items}>
+                            <Link href={FOOTER.socialNetwork[1].href}>
+                                <a className={style.instagram}>
+                                    <span>{FOOTER.socialNetwork[1].content}</span>
+                                </a>
+                            </Link>
+                            <Link href={FOOTER.socialNetwork[2].href}>
                                 <a className={style.email}>
-                                    <span>{FOOTER.email}</span>
+                                    <span>{FOOTER.socialNetwork[2].content}</span>
                                 </a>
                             </Link></div>
                     </div>
                     <div className={style.column}>
-                        <img src="img/header/logo.svg" alt="" />
+                        <img src="img/header/logo.svg" alt="logo" />
+                        <span>2022&copy;</span>
                     </div>
                 </div>
                 <div className={style.row}>
                     <div className={style.column}>
-                        <Link href="#">
+                        <Link href="/privacy">
                             <a>{FOOTER.politics}</a>
                         </Link>
                     </div>

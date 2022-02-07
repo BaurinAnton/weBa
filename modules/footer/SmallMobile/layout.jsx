@@ -8,9 +8,9 @@ export const SmallMobile = () => {
             <div className={style.wrapper}>
                 <div className={style.row}>
                     <div className={style.column}>
-                        <Link href="#">
+                        <Link href={FOOTER.socialNetwork[0].href}>
                             <a className={style.telegram}>
-                                <span>{FOOTER.telegram}</span>
+                                <span>{FOOTER.socialNetwork[0].content}</span>
                             </a>
                         </Link>
                         <Link href="#">
@@ -20,24 +20,25 @@ export const SmallMobile = () => {
                         </Link>
                     </div>
                     <div className={style.column}>
-                        <img src="img/header/logo.svg" alt="" />
+                        <img src="img/header/logo.svg" alt="logo" />
+                        <span>2022&copy;</span>
                     </div>
                 </div>
                 <div className={style.row}>
-                    <Link href="#">
+                    <Link href={FOOTER.socialNetwork[1].href}>
                         <a className={style.instagram}>
-                            <span>{FOOTER.instagram}</span>
+                            <span>{FOOTER.socialNetwork[1].content}</span>
                         </a>
                     </Link>
-                    <Link href="#">
+                    <Link href={FOOTER.socialNetwork[2].href}>
                         <a className={style.email}>
-                            <span>{FOOTER.email}</span>
+                            <span>{FOOTER.socialNetwork[2].content}</span>
                         </a>
                     </Link>
                 </div>
                 <div className={style.row}>
                     <div className={style.column}>
-                        <Link href="#">
+                        <Link href="/privacy">
                             <a>{FOOTER.politics}</a>
                         </Link>
                     </div>

@@ -1,17 +1,30 @@
+import Link from 'next/link'
+
 import { useState } from 'react'
 import { HEADER } from './constants'
 import style from './style.module.scss'
 
-export const Desktop = ({ handlerButton }) => {
+export const Desktop = ({ handlerButton, handlerMenu }) => {
     const [isActiveMenu, setIsActiveMenu] = useState(false);
     const HeaderConstants = HEADER.list.map((list) => (
         <li key={list.id}>
-            <a href="/" className={style.navLink}>{list.content}</a>
+            <Link href={list.href} scroll={false}>
+                <a className={style.navLink}>{list.content}</a>
+            </Link>
         </li>
     ))
     const MenuConstants = HEADER.listMenu.map((list) => (
         <li key={list.id}>
-            <a href="/" className={style.navLink} onClick={() => (setIsActiveMenu(!isActiveMenu))}>{list.content}</a>
+            <Link href={list.href} scroll={false}>
+                <a
+                    className={style.navLink}
+                    onClick={
+                        () => (setIsActiveMenu(!isActiveMenu),
+                            isActiveMenu ? document.body.style = ""
+                                : document.body.style.overflow = "hidden", handlerMenu()
+                        )}>{list.content}
+                </a>
+            </Link>
         </li>
     ))
     const offMenuIsForm = () => {
@@ -19,15 +32,20 @@ export const Desktop = ({ handlerButton }) => {
         setIsActiveMenu(!isActiveMenu)
     }
     const onMenu = () => {
-        !isActiveMenu ? document.body.style.overflow = "hidden" : document.body.style = ""
         setIsActiveMenu(!isActiveMenu)
+        !isActiveMenu ? document.body.style.overflow = "hidden" : document.body.style = ""
+        handlerMenu()
     }
     return (
         <>
             <header className={style.header}>
                 <div className={style.wrapper}>
                     <div className={style.column}>
-                        <img src="img/header/logo.svg" alt="" />
+                        <Link href="/">
+                            <a>
+                                <img src="img/header/logo.svg" alt="logo" />
+                            </a>
+                        </Link>
                     </div>
                     <div className={style.column}>
                         <ul>
@@ -57,7 +75,7 @@ export const Desktop = ({ handlerButton }) => {
                         <div className={style.discussProject} onClick={offMenuIsForm}>
                             <span>{HEADER.discussProject}</span>
                         </div>
-                        <img src="img/header/arrow.svg" alt="" />
+                        <img src="img/header/arrow.svg" alt="arrow" />
                     </div>
                 </div>
             </header>

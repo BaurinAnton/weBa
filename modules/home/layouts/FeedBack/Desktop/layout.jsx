@@ -3,10 +3,15 @@ import { motion } from 'framer-motion';
 import style from './style.module.scss'
 import { FEED_BACK } from './constants'
 
-export const Desktop = ({ handlerButton }) => {
+export const Desktop = ({ handlerButton, handlerMenu }) => {
+    const deleteArrow = () => (
+        handlerButton(),
+        handlerMenu()
+    )
     return (
         <motion.section
             className={style.feedBack}
+            id="feedBack"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -20,7 +25,7 @@ export const Desktop = ({ handlerButton }) => {
                     <div className={style.column}>
                         <h2>{FEED_BACK.h2}</h2>
                     </div>
-                    <div className={style.column} onClick={handlerButton}>
+                    <div className={style.column} onClick={deleteArrow}>
                         <span>{FEED_BACK.circleText}</span>
                     </div>
                 </div>

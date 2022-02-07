@@ -1,5 +1,5 @@
 .work {
-    margin-top: 6.625em;
+    padding-top: 9.375em;
     font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
     .wrapper {
         max-width: 95%;
@@ -53,7 +53,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 9.375em;
             .column:nth-of-type(1) {
                 border: 0.0625em solid #23232333;
                 border-radius: 100%;

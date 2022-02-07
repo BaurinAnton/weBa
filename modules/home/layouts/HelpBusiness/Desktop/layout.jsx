@@ -5,7 +5,7 @@ import style from './style.module.scss'
 
 export const Desktop = () => {
     return (
-        <section className={style.helpBusiness}>
+        <section id="helpBusiness" className={style.helpBusiness}>
             <div className={style.wrapper}>
                 <motion.div className={style.column}
                     initial="hidden"

@@ -28,7 +28,7 @@ export const Tablet = () => {
         </motion.div>
     ))
     return (
-        <section className={style.stages}>
+        <section className={style.stages} id="stages">
             <div className={style.wrapper}>
                 <motion.div className={style.row}
                     initial="hidden"
