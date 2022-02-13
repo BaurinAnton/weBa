@@ -29,7 +29,7 @@ export const FormDone = ({ handlerButton, handlerMenu }) => {
                             <a target="_blank">{FORM.socialNetwork[1].content}</a>
                         </Link>
                         <Link href={FORM.socialNetwork[2].href}>
-                            <a target="_blank">{FORM.socialNetwork[2].content}</a>
+                            <a>{FORM.socialNetwork[2].content}</a>
                         </Link>
                     </div>
                     <div className={style.textPersonal}>

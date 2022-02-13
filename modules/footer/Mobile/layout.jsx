@@ -10,7 +10,7 @@ export const Mobile = () => {
                     <div className={style.column}>
                         <div className={style.items}>
                             <Link href={FOOTER.socialNetwork[0].href}>
-                                <a className={style.telegram}>
+                                <a className={style.telegram} target="_blank">
                                     <span>{FOOTER.socialNetwork[0].content}</span>
                                 </a>
                             </Link>
@@ -21,7 +21,7 @@ export const Mobile = () => {
                             </Link></div>
                         <div className={style.items}>
                             <Link href={FOOTER.socialNetwork[1].href}>
-                                <a className={style.instagram}>
+                                <a className={style.instagram} target="_blank">
                                     <span>{FOOTER.socialNetwork[1].content}</span>
                                 </a>
                             </Link>

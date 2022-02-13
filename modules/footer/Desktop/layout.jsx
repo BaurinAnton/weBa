@@ -18,12 +18,12 @@ export const Desktop = ({ hrefArrow }) => {
                         </a>
                     </Link>
                     <Link href={FOOTER.socialNetwork[2].href}>
-                        <a className={style.email} target="_blank">
+                        <a className={style.email}>
                             <span>{FOOTER.socialNetwork[2].content}</span>
                         </a>
                     </Link>
                     <Link href={hrefArrow}>
-                        <a className={style.arrow} target="_blank">
+                        <a className={style.arrow}>
                             <span>{FOOTER.arrow}</span>
                         </a>
                     </Link>
