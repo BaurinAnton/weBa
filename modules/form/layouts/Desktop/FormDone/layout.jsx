@@ -23,13 +23,13 @@ export const FormDone = ({ handlerButton, handlerMenu }) => {
                     </div>
                     <div className={style.socialNetwork}>
                         <Link href={FORM.socialNetwork[0].href}>
-                            <a>{FORM.socialNetwork[0].content}</a>
+                            <a target="_blank">{FORM.socialNetwork[0].content}</a>
                         </Link>
                         <Link href={FORM.socialNetwork[1].href}>
-                            <a>{FORM.socialNetwork[1].content}</a>
+                            <a target="_blank">{FORM.socialNetwork[1].content}</a>
                         </Link>
                         <Link href={FORM.socialNetwork[2].href}>
-                            <a>{FORM.socialNetwork[2].content}</a>
+                            <a target="_blank">{FORM.socialNetwork[2].content}</a>
                         </Link>
                     </div>
                     <div className={style.textPersonal}>

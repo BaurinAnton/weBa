@@ -8,22 +8,22 @@ export const Desktop = ({ hrefArrow }) => {
             <div className={style.wrapper}>
                 <div className={style.column}>
                     <Link href={FOOTER.socialNetwork[0].href}>
-                        <a className={style.telegram}>
+                        <a className={style.telegram} target="_blank">
                             <span>{FOOTER.socialNetwork[0].content}</span>
                         </a>
                     </Link>
                     <Link href={FOOTER.socialNetwork[1].href}>
-                        <a className={style.instagram}>
+                        <a className={style.instagram} target="_blank">
                             <span>{FOOTER.socialNetwork[1].content}</span>
                         </a>
                     </Link>
                     <Link href={FOOTER.socialNetwork[2].href}>
-                        <a className={style.email}>
+                        <a className={style.email} target="_blank">
                             <span>{FOOTER.socialNetwork[2].content}</span>
                         </a>
                     </Link>
                     <Link href={hrefArrow}>
-                        <a className={style.arrow}>
+                        <a className={style.arrow} target="_blank">
                             <span>{FOOTER.arrow}</span>
                         </a>
                     </Link>
