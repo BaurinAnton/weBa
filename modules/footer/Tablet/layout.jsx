@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { FOOTER } from './constants'
 import style from './style.module.scss'
 
-export const Tablet = () => {
+export const Tablet = ({ hrefArrow }) => {
     return (
         <footer className={style.footer}>
             <div className={style.wrapper}>
@@ -22,7 +22,7 @@ export const Tablet = () => {
                             <span>{FOOTER.socialNetwork[2].content}</span>
                         </a>
                     </Link>
-                    <Link href="#">
+                    <Link href={hrefArrow}>
                         <a className={style.arrow}>
                             <span>{FOOTER.arrow}</span>
                         </a>

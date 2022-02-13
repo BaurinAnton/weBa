@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { FOOTER } from './constants'
 import style from './style.module.scss'
 
-export const SmallMobile = () => {
+export const SmallMobile = ({ hrefArrow }) => {
     return (
         <footer className={style.footer}>
             <div className={style.wrapper}>
@@ -13,7 +13,7 @@ export const SmallMobile = () => {
                                 <span>{FOOTER.socialNetwork[0].content}</span>
                             </a>
                         </Link>
-                        <Link href="#">
+                        <Link href={hrefArrow}>
                             <a className={style.arrow}>
                                 <span>{FOOTER.arrow}</span>
                             </a>
