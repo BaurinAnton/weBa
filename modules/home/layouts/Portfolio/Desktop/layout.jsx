@@ -44,7 +44,7 @@ export const Desktop = () => {
                             <span>{PORTFOLIO.hover[0].content}</span>
                         </div>
                         <div className={style.box}>
-                            <img src="img/home/portfolio/arrowHover.svg" alt="arrow" />
+                            <img src="img/home/Portfolio/arrowHover.svg" alt="arrow" />
                         </div>
                     </div>
                 </motion.div>

@@ -28,7 +28,7 @@ export const Tablet = ({ handlerButton, handlerMenu }) => {
                             <span>{MAIN_SECTION.h1[2].content}</span>
                         </h1>
                     </div>
-                    <div className={style.column} onClick={handlerButton, deleteArrow}>
+                    <div className={style.column}>
                         <span>{MAIN_SECTION.h2[0].content}</span>
                         <span>{MAIN_SECTION.h2[1].content}</span>
                     </div>
@@ -44,7 +44,7 @@ export const Tablet = ({ handlerButton, handlerMenu }) => {
                             hidden: { width: 0 }
                         }}>
                     </motion.div>
-                    <div className={style.column} onClick={handlerButton}>
+                    <div className={style.column} onClick={deleteArrow}>
                         <span>{MAIN_SECTION.circleText}</span>
                     </div>
                 </div>

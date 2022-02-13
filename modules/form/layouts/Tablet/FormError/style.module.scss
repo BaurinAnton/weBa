@@ -51,7 +51,7 @@
             align-items: center;
             justify-content: center;
             border: 0.0625em solid #23232333;
-            padding: 2.93em 3.75em;
+            padding: 2.92em 3.75em;
             margin-bottom: 1em;
             img {
                 width: 2.8125em;
@@ -70,34 +70,17 @@
                 text-align: center;
             }
         }
-        .socialNetwork {
-            padding-top: 0.9375em;
+        .backForm {
+            padding-top: 1.7em;
+            padding-bottom: 0.625em;
             border-top: 0.0625em solid #23232333;
-            a {
-                display: inline-flex;
-                align-items: center;
-                text-decoration: none;
-                color: #2d2b2b;
-                border: 0.0625em solid #23232333;
+            cursor: pointer;
+            .backButton {
+                background-color: #232323;
+                color: white;
+                font-size: 1.125em;
                 border-radius: 6.25em;
-                margin-right: 0.2778em;
-                &:nth-of-type(1) {
-                    padding: 0.7em 1.6em 0.722em 1.6em;
-                }
-                &:nth-of-type(2) {
-                    padding: 0.7em 1.4em 0.722em 1.4em;
-                }
-                &:nth-of-type(3) {
-                    padding: 0.7em 2.1em 0.722em 2.1em;
-                }
-                &:hover {
-                    background-color: #232323;
-                    color: white;
-                    transition-duration: 100ms;
-                }
-                &:nth-last-of-type(1) {
-                    margin-right: 0;
-                }
+                padding: 0.5556em 6.611em 0.7222em 6.611em;
             }
         }
         .textPersonal {

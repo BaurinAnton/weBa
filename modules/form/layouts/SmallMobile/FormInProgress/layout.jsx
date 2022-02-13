@@ -1,30 +1,35 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState } from 'react'
 import Link from 'next/link'
+import NumberFormat from 'react-number-format';
 
 import { FORM } from './constants'
 import style from './style.module.scss'
 
-export const FormInProgress = ({ handlerButton, isDoneForm, handlerMenu }) => {
+export const FormInProgress = ({ handlerButton, isDoneForm, isErrorForm, handlerMenu }) => {
     const exitForm = () => (
         handlerButton(),
         handlerMenu()
     )
     const [name, setName] = useState('')
     const [tel, setTel] = useState('')
+    const [isAllowEmpty, setIsAllowEmpty] = useState(false);
     const handleSubmit = e => {
         e.preventDefault();
         const data = {
             name,
             tel
         };
-        if (!data.tel == '' && !data.name == '') {
-            fetch('/api/contact', {
-                method: 'post',
-                body: JSON.stringify(data)
-            })
-            isDoneForm()
-        }
+        fetch('/api/contact', {
+            method: 'post',
+            body: JSON.stringify(data)
+        })
+            .then(
+                response =>
+                    (response.status == 200) ?
+                        isDoneForm()
+                        : isErrorForm()
+            )
     }
     return (
         <>
@@ -47,33 +52,41 @@ export const FormInProgress = ({ handlerButton, isDoneForm, handlerMenu }) => {
                             <input
                                 id="name"
                                 type="text"
-                                maxLength="25"
-                                pattern="^[А-Яа-яЁё\s]+$"
+                                maxLength="35"
                                 placeholder={FORM.form[0].name}
-                                onChange={e => setName(e.target.value)}
-                                required
+                                onChange={e => setName(e.target.value = e.target.value.split(' ').map(i => i ? (i[0].toUpperCase() + i.slice(1)) : i).join(' ').replace(/[^a-zа-яё ]/gi, ''))}
                             />
-                            <input
-                                id="tel"
-                                type="text"
-                                pattern="([\+]*[7-8]{1}\s?[\(]*9[0-9]{2}[\)]*\s?\d{3}[-]*\d{2}[-]*\d{2})"
+                            <NumberFormat
+                                format="+7 (###) ###-####"
+                                mask="_"
                                 placeholder={FORM.form[1].tel}
+                                allowEmptyFormatting
+                                className={isAllowEmpty ? style.onNumberFormat : style.offNumberFormat}
                                 onChange={e => setTel(e.target.value)}
-                                required />
+                                onFocus={() => setIsAllowEmpty(isAllowEmpty = true)}
+                                onBlur={() => (tel == '' || tel == '+7 (___) ___-____') ? setIsAllowEmpty(isAllowEmpty = false) : setIsAllowEmpty(isAllowEmpty = true)}
+                            />
+
                             <input
                                 type="submit"
-                                value={FORM.form[2].buttonText} />
+                                value={FORM.form[2].buttonText}
+                                disabled={name.length < 2 || tel.includes("_") == true || tel.length < 17} />
                         </form>
                         <div className={style.socialNetwork}>
-                            <Link href={FORM.socialNetwork[0].href}>
-                                <a>{FORM.socialNetwork[0].content}</a>
-                            </Link>
-                            <Link href={FORM.socialNetwork[1].href}>
-                                <a>{FORM.socialNetwork[1].content}</a>
-                            </Link>
-                            <Link href={FORM.socialNetwork[2].href}>
-                                <a>{FORM.socialNetwork[2].content}</a>
-                            </Link>
+                            <div className={style.column}>
+                                <span>{FORM.h4}</span>
+                            </div>
+                            <div className={style.column}>
+                                <Link href={FORM.socialNetwork[0].href}>
+                                    <a>{FORM.socialNetwork[0].content}</a>
+                                </Link>
+                                <Link href={FORM.socialNetwork[1].href}>
+                                    <a>{FORM.socialNetwork[1].content}</a>
+                                </Link>
+                                <Link href={FORM.socialNetwork[2].href}>
+                                    <a>{FORM.socialNetwork[2].content}</a>
+                                </Link>
+                            </div>
                         </div>
                         <div className={style.textPersonal}>
                             <span>{FORM.personalDataText[0].content}</span>

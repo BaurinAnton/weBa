@@ -18,12 +18,13 @@
         align-items: center;
         background-color: white;
         position: relative;
-        padding: 2.5em 3.6em;
+        padding: 2.5em 3.25em;
         .exit {
             position: absolute;
             top: 1.8em;
-            right: 2.2em;
+            right: 2em;
             cursor: pointer;
+            padding: 0em 0.2em 0.2em 0.2em;
             span {
                 display: inline-block;
                 width: 0.9em;
@@ -50,7 +51,7 @@
             align-items: center;
             justify-content: center;
             border: 0.0625em solid #23232333;
-            padding: 2.75em 2.1em;
+            padding: 2.53em 2.45em;
             margin-bottom: 1em;
             img {
                 width: 2.8125em;
@@ -81,6 +82,15 @@
                 border-radius: 6.25em;
                 padding: 0.7em 1.2em 0.722em 1.2em;
                 margin-right: 0.2778em;
+                &:nth-of-type(1) {
+                    padding: 0.625em 1.4em 0.625em 1.4em; 
+                }
+                &:nth-of-type(2) {
+                    padding: 0.625em 1.1875em 0.625em 1.1875em; 
+                }
+                &:nth-of-type(3) {
+                    padding: 0.625em 2em 0.625em 2em;
+                }
                 &:hover {
                     background-color: #232323;
                     color: white;

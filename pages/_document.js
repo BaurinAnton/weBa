@@ -23,7 +23,7 @@ class MyDocument extends Document {
             crossOrigin=""
           />
           <meta charset="utf-8" />
-          <meta name="Author" content="Баурин Антон" />
+          {/* <meta name="Author" content="Баурин Антон" /> */}
           <meta name="Copyright" content="weBa" />
           <meta property="og:locale" content="ru_RU" />
           <meta property="og:type" content="website" />

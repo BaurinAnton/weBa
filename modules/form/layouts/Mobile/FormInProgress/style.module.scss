@@ -22,8 +22,9 @@
         .exit {
             position: absolute;
             top: 1.8em;
-            right: 2.2em;
+            right: 2em;
             cursor: pointer;
+            padding: 0em 0.2em 0.2em 0.2em;
             span {
                 display: inline-block;
                 width: 0.9em;
@@ -48,7 +49,7 @@
             font-family: "NAMU";
             color: #232323cc;
             font-size: 0.9375em;
-            width: 17em;
+            width: 23em;
             line-height: 1.2em;
             text-align: center;
             margin-bottom: 1em;
@@ -58,10 +59,16 @@
             flex-direction: column;
             margin-bottom: 1em;
             .noValidName {
-                border: 0.0625em solid #E41F1F;
+                border: 0.0625em solid #e41f1f;
             }
             .noValidTel {
-                border: 0.0625em solid #E41F1F;
+                border: 0.0625em solid #e41f1f;
+            }
+            .onNumberFormat {
+                color: #232323;
+            }
+            .offNumberFormat {
+                color: #8e8e8e;
             }
             input {
                 font-size: 0.875em;
@@ -84,33 +91,55 @@
                     width: 20.5em;
                     padding: 0.425em 0 0.722em 0;
                     cursor: pointer;
-                    &:hover {
+                    transition-duration: 100ms;
+                    &:disabled {
                         transition-duration: 100ms;
                         background-color: white;
-                        color: #232323;
+                        color: #8e8e8e;
+                        cursor: default;
                     }
                 }
             }
         }
         .socialNetwork {
-            padding-top: 0.9375em;
+            padding-top: 0.625em;
             border-top: 0.0625em solid #23232333;
-            a {
-                display: inline-flex;
-                align-items: center;
-                text-decoration: none;
-                color: #2d2b2b;
-                border: 0.0625em solid #23232333;
-                border-radius: 6.25em;
-                padding: 0.625em 1.1875em 0.625em 1.1875em;
-                margin-right: 0.2778em;
-                &:hover {
-                    background-color: #232323;
-                    color: white;
-                    transition-duration: 100ms;
+            .column:nth-of-type(1) {
+                display: flex;
+                justify-content: center;
+                padding-bottom: 1.25em;
+                span {
+                    font-size: 0.9375em;
+                    color: #232323CC;
                 }
-                &:nth-last-of-type(1) {
-                    margin-right: 0;
+            }
+            .column:nth-of-type(2) {
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    text-decoration: none;
+                    color: #2d2b2b;
+                    border: 0.0625em solid #23232333;
+                    border-radius: 6.25em;
+                    padding: 0.625em 1.1875em 0.625em 1.1875em;
+                    &:nth-of-type(1) {
+                        padding: 0.625em 1.4em 0.625em 1.4em; 
+                    }
+                    &:nth-of-type(2) {
+                        padding: 0.625em 1.1875em 0.625em 1.1875em; 
+                    }
+                    &:nth-of-type(3) {
+                        padding: 0.625em 2em 0.625em 2em;
+                    }
+                    margin-right: 0.2778em;
+                    &:hover {
+                        background-color: #232323;
+                        color: white;
+                        transition-duration: 100ms;
+                    }
+                    &:nth-last-of-type(1) {
+                        margin-right: 0;
+                    }
                 }
             }
         }
