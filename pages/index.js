@@ -34,7 +34,7 @@ const Home = () => {
         <title>Создаем сайты, которые продают | weBa</title>
         <meta name="description" content="Разработка различных видов сайтов: landing page, сайт-визитка, многостраничный сайт, интернет-магазин, блог. Продвижение сайтов в Google Adwords и Яндекс Директ." />
       </Head>
-      <Header handlerButton={handlerButton} handlerMenu={handlerMenu} />
+      <Header handlerButton={handlerButton} handlerMenu={handlerMenu}/>
       <main>
         {isFormFilling === true ? <Form handlerButton={handlerButton} handlerMenu={handlerMenu} /> : ''}
         <MainSection handlerButton={handlerButton} handlerMenu={handlerMenu} />

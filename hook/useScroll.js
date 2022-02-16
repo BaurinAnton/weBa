@@ -9,16 +9,18 @@ export const useScroll = () => {
         }
     )
     useEffect(() => {
-        const handleWindowScroll = () => setWindowScroll(
-            {
-                height: window.scrollY,
-                heightBody: document.body.clientHeight,
-                heightClient: window.innerHeight
-            }
-        )
-        handleWindowScroll()
-        window.addEventListener("scroll", handleWindowScroll);
-        return () => window.removeEventListener("scroll", handleWindowScroll);
+        if (typeof window !== 'undefined') {
+            const handleWindowScroll = () => setWindowScroll(
+                windowScroll = {
+                    height: window.scrollY,
+                    heightBody: document.body.clientHeight,
+                    heightClient: window.innerHeight
+                }
+            )
+            handleWindowScroll()
+            window.addEventListener("scroll", handleWindowScroll);
+            return () => window.removeEventListener("scroll", handleWindowScroll);
+        }
     }, [])
     return windowScroll
 }

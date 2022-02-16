@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useWindowSize } from '/hook'
 
 import { Desktop } from './Desktop'
