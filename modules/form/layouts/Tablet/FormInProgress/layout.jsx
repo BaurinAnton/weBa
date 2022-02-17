@@ -6,7 +6,7 @@ import NumberFormat from 'react-number-format';
 import { FORM } from './constants'
 import style from './style.module.scss'
 
-export const FormInProgress = ({ handlerButton, isDoneForm, isErrorForm, handlerMenu }) => {
+export const FormInProgress = ({ handlerButton, isDoneForm, isErrorForm, handlerMenu, isNotInternet }) => {
     const [name, setName] = useState('')
     const [tel, setTel] = useState('')
     const [isAllowEmpty, setIsAllowEmpty] = useState(false);
@@ -21,11 +21,28 @@ export const FormInProgress = ({ handlerButton, isDoneForm, isErrorForm, handler
             body: JSON.stringify(data)
         })
             .then(
-                response =>
-                    (response.status == 200) ?
+                response => {
+                    if (response.status == 200) {
                         isDoneForm()
-                        : isErrorForm()
+                    }
+                    else if (response.status == 500) {
+                        isErrorForm()
+                    }
+                    else {
+                        let error = new Error(response.statusText)
+                        error.response = response
+                        throw error
+                    }
+                }
             )
+            .catch((err) => {
+                if (err.message == 'Failed to fetch') {
+                    isNotInternet()
+                }
+                else {
+                    isErrorForm()
+                }
+            })
     }
     const exitForm = () => (
         handlerButton(),
