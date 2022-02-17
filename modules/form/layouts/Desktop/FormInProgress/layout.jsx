@@ -11,6 +11,8 @@ export const FormInProgress = ({ handlerButton, isDoneForm, handlerMenu, isError
     const [tel, setTel] = useState('')
     const [isAllowEmpty, setIsAllowEmpty] = useState(false);
     const handleSubmit = e => {
+        // const symbol = /[^a-zа-яё ]/gi
+        // if ()
         e.preventDefault();
         const data = {
             name,
@@ -87,7 +89,7 @@ export const FormInProgress = ({ handlerButton, isDoneForm, handlerMenu, isError
                             <input
                                 type="submit"
                                 value={FORM.form[2].buttonText}
-                                disabled={name.length < 2 || tel.includes("_") == true || tel.length < 17}
+                                disabled={name.length < 2 || tel.includes("_") == true || tel.length < 17 || name.split(' ').join('').length == 0}
                             />
                         </form>
                         <div className={style.socialNetwork}>

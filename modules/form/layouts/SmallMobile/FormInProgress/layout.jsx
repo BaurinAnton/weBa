@@ -87,7 +87,7 @@ export const FormInProgress = ({ handlerButton, isDoneForm, isErrorForm, handler
                             <input
                                 type="submit"
                                 value={FORM.form[2].buttonText}
-                                disabled={name.length < 2 || tel.includes("_") == true || tel.length < 17} />
+                                disabled={name.length < 2 || tel.includes("_") == true || tel.length < 17 || name.split(' ').join('').length == 0} />
                         </form>
                         <div className={style.socialNetwork}>
                             <div className={style.column}>

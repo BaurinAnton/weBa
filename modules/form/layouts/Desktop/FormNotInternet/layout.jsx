@@ -18,7 +18,6 @@ export const FormNotInternet = ({ handlerButton, handlerMenu, isErrorInProgressF
                     </div>
                     <h2>{FORM.h2}</h2>
                     <div className={style.donefullyForm}>
-                        <img src="/img/formFilling/checkError.svg" alt="checkbox" />
                         <h3>{FORM.doneText}</h3>
                     </div>
                     <div className={style.backForm}>
