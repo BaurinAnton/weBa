@@ -33,8 +33,8 @@ export const Desktop = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0 }}
                     variants={{
-                        visible: { opacity: 1, translateY: '0' },
-                        hidden: { opacity: 0, translateY: '50px' }
+                        visible: { opacity: 1, translateY: 0 },
+                        hidden: { opacity: 0, translateY: '3.125rem' }
                     }}>
                     <div className={style.items}>
                         <span>{PORTFOLIO.text}</span>

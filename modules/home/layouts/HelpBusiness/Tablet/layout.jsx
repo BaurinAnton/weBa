@@ -13,8 +13,8 @@ export const Tablet = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0 }}
                     variants={{
-                        visible: { opacity: 1, translateY: '0px' },
-                        hidden: { opacity: 0, translateY: '50px' }
+                        visible: { opacity: 1, translateY: 0 },
+                        hidden: { opacity: 0, translateY: '3.125rem' }
                     }}>
                     <h2>
                         <span>{HELP_BUSINESS.h2[0].content}</span>
