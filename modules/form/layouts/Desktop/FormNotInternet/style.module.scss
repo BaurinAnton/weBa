@@ -10,7 +10,12 @@
     z-index: 10;
     top: calc(50% - 14.375em);
     left: calc(50% - 28.53125em);
-    font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
+    @media (max-width: 1600px) {
+        font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
+    }
+    @media (min-width: 1601px) {
+        font-size: 20px;
+    }
     .wrapper {
         display: flex;
         flex-direction: column;

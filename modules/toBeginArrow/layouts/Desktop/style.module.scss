@@ -1,5 +1,10 @@
 .linkArrow {
-    font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
+    @media (max-width: 1600px) {
+        font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
+    }
+    @media (min-width: 1601px) {
+        font-size: 20px;
+    }
     .toBeginArrow {
         border: 0.0625em solid #23232333;
         background-color: white;

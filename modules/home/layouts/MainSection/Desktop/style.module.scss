@@ -1,8 +1,15 @@
 .MainSection {
-    font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
     .wrapper {
-        max-width: 95%;
-        margin: 0 auto;
+        @media (max-width: 1600px) {
+            font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
+            margin: 0 auto;
+            max-width: 95%;
+        }
+        @media (min-width: 1601px) {
+            font-size: 20px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
         padding-top: 10.5625em;
         padding-bottom: 5.25em;
         border-bottom: 0.0625em solid #23232333;
@@ -50,6 +57,9 @@
                 position: absolute;
                 top: 13em;
                 left: 55em;
+                @media (min-width: 1601px) {
+                    left: 50em;
+                }
             }
         }
         .row:nth-of-type(2) {

@@ -1,10 +1,17 @@
 .whyUs {
-    font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
-    padding-top: 9.375em;
     .wrapper {
-        max-width: 95%;
-        margin: 0 auto;
+        @media (max-width: 1600px) {
+            font-size: calc(12px + (12 + 12 * 0.8) * ((100vw - 1000px) / 1920));
+            margin: 0 auto;
+            max-width: 95%;
+        }
+        @media (min-width: 1601px) {
+            font-size: 20px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
         position: relative;
+        padding-top: 9.375em;
         .row:nth-of-type(1) {
             margin-bottom: 5.625em;
             h2 {
@@ -52,6 +59,14 @@
                 &:nth-of-type(6) {
                     background-color: #232323;
                     padding: 1.5625em;
+                }
+                &:nth-of-type(2),
+                &:nth-of-type(6) {
+                    @media (min-width: 1601px) {
+                        .items:nth-of-type(2) {
+                            width: 15em;
+                        }
+                    }
                 }
                 &:nth-of-type(3),
                 &:nth-of-type(5),
@@ -102,6 +117,10 @@
                     align-items: center;
                     width: 18em;
                     height: 18em;
+                    @media (min-width: 1601px) {
+                        width: 16.6em;
+                        height: 16.6em;
+                    }
                     cursor: pointer;
                     span {
                         font-size: 1.375em;
