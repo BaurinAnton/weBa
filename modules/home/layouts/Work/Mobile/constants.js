@@ -8,7 +8,7 @@ export const WORK = {
             price: [
                 {
                     textOne: 'от ',
-                    textTo: '32 900',
+                    textTo: '36 900',
                     textThree: ' рублей*'
                 }
             ]
@@ -20,7 +20,7 @@ export const WORK = {
             price: [
                 {
                     textOne: 'от ',
-                    textTo: '30 900',
+                    textTo: '34 900',
                     textThree: ' рублей*'
                 }
             ]
@@ -32,7 +32,7 @@ export const WORK = {
             price: [
                 {
                     textOne: 'от ',
-                    textTo: '42 900',
+                    textTo: '46 900',
                     textThree: ' рублей*'
                 }
             ]
@@ -44,7 +44,7 @@ export const WORK = {
             price: [
                 {
                     textOne: 'от ',
-                    textTo: '72 900',
+                    textTo: '76 900',
                     textThree: ' рублей*'
                 }
             ]
@@ -56,7 +56,7 @@ export const WORK = {
             price: [
                 {
                     textOne: 'от ',
-                    textTo: '52 900',
+                    textTo: '56 900',
                     textThree: ' рублей*'
                 }
             ]
@@ -68,7 +68,7 @@ export const WORK = {
             price: [
                 {
                     textOne: 'от ',
-                    textTo: '15 900',
+                    textTo: '16 900',
                     textThree: ' рублей*'
                 }
             ]

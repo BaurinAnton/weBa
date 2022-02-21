@@ -1,6 +1,6 @@
 export const FORM = {
     h2: 'Хотите заказать проект?',
-    doneText: 'Спасибо! Мы свяжемся с Вами в течение 15 минут.',
+    doneText: 'Спасибо! Мы свяжемся с Вами в ближайшее время.',
     socialNetwork: [
         { content: 'Telegram', href: 'https://t.me/webastudio' },
         { content: 'WhatsApp', href: 'https://wa.me/message/4J3MEQL7ZEIPP1' },
